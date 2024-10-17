@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="vh-100 bg-light">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-lg-9 col-xl-7">
+                    <div class="card rounded-3 shadow-sm">
+                        <div class="card-body p-4">
+                            <!-- Title -->
+                            <h4 class="text-center my-3 pb-3">To Do App</h4>
+
+                            <!-- Meal Plan Dropdown for Breakfast -->
+                            <div class="text-center my-3 pb-3">
+                                <label for="dietPlanBreakfast" class="form-label">Choose your Breakfast</label>
+                                <select id="dietPlanBreakfast" class="form-select">
+                                    <option selected>Choose your Breakfast</option>
+                                    <option value="1">Low Carb Diet</option>
+                                    <option value="2">High Protein Diet</option>
+                                    <option value="3">Vegetarian Diet</option>
+                                </select>
+                            </div>
+
+                            <!-- Meal Plan Dropdown for Lunch -->
+                            <div class="text-center my-3 pb-3">
+                                <label for="dietPlanLunch" class="form-label">Choose your Lunch</label>
+                                <select id="dietPlanLunch" class="form-select">
+                                    <option selected>Choose your Lunch</option>
+                                    <option value="1">Low Carb Diet</option>
+                                    <option value="2">High Protein Diet</option>
+                                    <option value="3">Vegetarian Diet</option>
+                                </select>
+                            </div>
+
+                            <!-- Meal Plan Dropdown for Dinner -->
+                            <div class="text-center my-3 pb-3">
+                                <label for="dietPlanDinner" class="form-label">Choose your Dinner</label>
+                                <select id="dietPlanDinner" class="form-select">
+                                    <option selected>Choose your Dinner</option>
+                                    <option value="1">Low Carb Diet</option>
+                                    <option value="2">High Protein Diet</option>
+                                    <option value="3">Vegetarian Diet</option>
+                                </select>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="d-flex justify-content-center gap-2 mb-4">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-warning">Get Tasks</button>
+                            </div>
+
+                            <!-- Meal Plan Table -->
+                            <table class="table table-striped mb-4">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Breakfast</th>
+                                        <th scope="col">Lunch</th>
+                                        <th scope="col">Dinner</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Oatmeal with fruits</td>
+                                        <td>Grilled chicken salad</td>
+                                        <td>Baked salmon with veggies</td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <button type="button" class="btn btn-success ms-1">Finished</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Smoothie bowl</td>
+                                        <td>Quinoa with veggies</td>
+                                        <td>Chicken stir-fry</td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <button type="button" class="btn btn-success ms-1">Finished</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Avocado toast</td>
+                                        <td>Turkey sandwich</td>
+                                        <td>Vegetarian lasagna</td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <button type="button" class="btn btn-success ms-1">Finished</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html

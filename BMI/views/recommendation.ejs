@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Healthy Food Recommendations</h1>
+        <p>Your guide to nutritious foods</p>
+    </header>
+
+    <div class="mt-4">
+        <h4 class="text-center">Go Foods (Energy):</h4>
+        <div class="d-flex justify-content-center flex-wrap">
+          <% for (let i = 0; i < recommendations.go.length; i++) { %>
+            <div class="card m-2" style="width: 18rem;">
+              <img src="<%= recommendations.goImages[i] %>" class="card-img-top" alt="<%= recommendations.go[i] %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= recommendations.go[i] %></h5>
+                <p class="card-text">Energy-rich food to help you stay active.</p>
+              </div>
+            </div>
+          <% } %>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <h4 class="text-center">Grow Foods (Protein):</h4>
+        <div class="d-flex justify-content-center flex-wrap">
+          <% for (let i = 0; i < recommendations.grow.length; i++) { %>
+            <div class="card m-2" style="width: 18rem;">
+              <img src="<%= recommendations.growImages[i] %>" class="card-img-top" alt="<%= recommendations.grow[i] %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= recommendations.grow[i] %></h5>
+                <p class="card-text">Protein-rich food to support your growth.</p>
+              </div>
+            </div>
+          <% } %>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <h4 class="text-center">Glow Foods (Vitamins and Minerals):</h4>
+        <div class="d-flex justify-content-center flex-wrap">
+          <% for (let i = 0; i < recommendations.glow.length; i++) { %>
+            <div class="card m-2" style="width: 18rem;">
+              <img src="<%= recommendations.glowImages[i] %>" class="card-img-top" alt="<%= recommendations.glow[i] %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= recommendations.glow[i] %></h5>
+                <p class="card-text">Vitamins and minerals to keep you healthy.</p>
+              </div>
+            </div>
+          <% } %>
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a href="/" class="btn btn-primary">Back to BMI Calculator</a>
+    </div>
+</body>
+</html>

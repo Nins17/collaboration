@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header class="bg-primary text-white text-center py-4">
+    <h1>Balance Plate</h1>
+    <p>Calculate your Body Mass Index and get health insights.</p>
+  </header>
+
+  <h1 class="text-center py-4">Enter Your BMI</h1>
+  <div class="container mt-5">
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <form action="/calculate" method="POST" class="p-4 border rounded">
+          <div class="mb-3">
+            <label for="weight" class="form-label">Weight (kg):</label>
+            <input type="number" step="0.1" id="weight" name="weight" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="height" class="form-label">Height (m):</label>
+            <input type="number" step="0.01" id="height" name="height" class="form-control" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Calculate BMI</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <% if (bmi !== undefined && result !== undefined) { %>
+          <div class="alert alert-info text-center">
+            <h2>Your BMI is: <%= bmi %></h2>
+            <p>Category: <%= result %></p>
+            <div class="text-center">
+              <a href="/recommendation?result=<%= result %>" class="btn btn-success mt-3">Get Food Recommendations</a>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        <h3 class="text-center">What do the results mean?</h3>
+        <ul class="list-group mt-3">
+          <li class="list-group-item">
+            <strong>Underweight (BMI &lt; 18.5):</strong> This may indicate malnutrition, an eating disorder, or other health issues.
+          </li>
+          <li class="list-group-item">
+            <strong>Normal weight (BMI 18.5 - 24.9):</strong> This is considered a healthy range.
+          </li>
+          <li class="list-group-item">
+            <strong>Overweight (BMI 25 - 29.9):</strong> This range may indicate that you are at risk for health problems.
+          </li>
+          <li class="list-group-item">
+            <strong>Obese (BMI 30 and above):</strong> A BMI in this range is associated with increased health risks.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="bg-light text-center mt-5 py-3">
+    <div class="container">
+      <h5>BMI Results</h5>
+      <% if (bmi !== undefined && result !== undefined) { %>
+        <h2>Your BMI is: <%= bmi %></h2>
+        <p>Category: <%= result %></p>
+        <div class="text-center">
+          <a href="/recommendation?result=<%= result %>" class="btn btn-success mt-3">Get Food Recommendations</a>
+        </div>
+      <% } else { %>
+        <p>Please enter your weight and height above to calculate your BMI.</p>
+      <% } %>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
