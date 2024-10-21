@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Meal Plan</title>
+    <link href="../admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="../admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../static/img/BPLogo.jpg" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        /* Custom gradient for the sidebar */
+        .bg-gradient-primary {
+            background: linear-gradient(90deg, #00cdac, #f87fb1) !important;
+        }
+        .custom-lblue {
+        background-color: #00cdac !important;
+        }
+        .custom-blue {
+        color: #01ad91 !important;
+        }
+    </style>
+</head>
+<body id="page-top">
+    <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <img src="../static/img/BPLogo.jpg" alt="Logo" class="sidebar-brand-icon" style="width: auto; height: 50px;">
+                <div class="sidebar-brand-text mx-3">Balance Plate</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="bi bi-person-fill"></i>
+                    <span>User's Dashboard</span>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">Interface</div>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="recommendation.html">
+                    <i class="fas fa-bread-slice"></i>
+                    <span>Food Recommendation</span>
+                </a>
+            </li>
+            
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <hr class="sidebar-divider">
+        </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <li class="nav-item">
+                            <span class="nav-link text-gray-600">Current BMI: <strong>25.0</strong></span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link text-gray-600">BMI Category: <strong>Overweight</strong></span>
+                        </li>
+                        <li class="nav-item dropdown no-arrow">
+                            
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">User Name</span>
+                                <img class="img-profile rounded-circle" src="../upload/profile_pic.jpg">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="update.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Update Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h2 mb-0 text-gray-800">Add Meal Plan</h1>
+                    </div>
+                    
+                    <form action=".." method="POST">
+    
+                        <label class="h6 mb-0 text-gray-800 small">Breakfast</label> </br>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-basket text-primary custom-blue"></i></span>
+                            <select class="form-control" name="breakfast">
+                                <option value="">Select Breakfast</option>
+                                <option value="food1">Food 1</option>
+                                <option value="food2">Food 2</option>
+                                <option value="food3">Food 3</option>
+                            </select>
+                        </div>
+                    
+                        <label class="h6 mb-0 text-gray-800 small">Lunch</label> </br>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-basket text-primary custom-blue"></i></span>
+                            <select class="form-control" name="lunch">
+                                <option value="">Select Lunch</option>
+                                <option value="food1">Food 1</option>
+                                <option value="food2">Food 2</option>
+                                <option value="food3">Food 3</option>
+                            </select>
+                        </div>
+                    
+                        <label class="h6 mb-0 text-gray-800 small">Dinner</label> </br>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-basket text-primary custom-blue"></i></span>
+                            <select class="form-control" name="dinner">
+                                <option value="">Select Dinner</option>
+                                <option value="food1">Food 1</option>
+                                <option value="food2">Food 2</option>
+                                <option value="food3">Food 3</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-primary custom-lblue">Reset</button>
+                            <p style="color:white;">||</p>
+                            <input type="submit" name="update_meal_plan" value="Add" class="btn btn-success custom-lblue">
+                        </div>
+                    </form>
+                    
+                </div>
+                
+            </div>
+
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; User Name, 2024</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary custom-lblue" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary custom-lblue" href="../landing.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../admin/vendor/jquery/jquery.min.js"></script>
+    <script src="../admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../admin/js/sb-admin-2.min.js"></script>
+</body>
+</html>
